@@ -212,18 +212,18 @@ export default class LegendsActorSheet extends ActorSheet {
 
     const name = statName ? game.i18n.localize(`RyanTestLegends.stats.${statName}`) : null;
 
-    let conditions = super.getData();
-    conditions = filter_items(conditions.items, 'condition', false);
+    let context = super.getData();
+    let conditions = filter_items(context.items, 'condition', false);
 
     console.log(conditions);
 
-    for (let i = 0; i < conditions.length(); i++) {
+    Object.keys(conditions).forEach(i =>{
       if (conditions[i].checked) {
         if (conditions[i].name == 'Afraid' && (moveName == 'Intimidate' || moveName == 'Call Someone Out')) {
           penalties = 2;
         }
       }
-    }
+    })
 
     console.log(penalties);
 
