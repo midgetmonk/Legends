@@ -212,6 +212,21 @@ export default class LegendsActorSheet extends ActorSheet {
 
     const name = statName ? game.i18n.localize(`legends.stats.${statName}`) : null;
 
+    let conditions = this.item.system.condition;
+
+    console.log(conditions);
+
+    for (let i = 0; i < conditions.length(); i++) {
+      if (conditions[i].checked) {
+        if (conditions[i].name == 'Afraid' && (moveName == 'Intimidate' || moveName == 'Call Someone Out')) {
+          penalties = 2;
+        }
+      }
+    }
+
+    console.log(penalties);
+
+
     Dice.RollStat({
       statValue: statValue,
       statName: name,
