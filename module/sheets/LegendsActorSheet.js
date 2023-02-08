@@ -87,7 +87,7 @@ export default class LegendsActorSheet extends ActorSheet {
       })
 
       context.moveCategories = ['basic','balance', 'playbook'];
-      context.selectedMoveCategory = this.actor.getFlag('legends', 'moveCategory') || 'all';
+      context.selectedMoveCategory = this.actor.getFlag('RyanTestLegends', 'moveCategory') || 'all';
     }
     return context;
   }
