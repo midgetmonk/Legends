@@ -217,6 +217,8 @@ export default class LegendsActorSheet extends ActorSheet {
 
     console.log(conditions);
 
+    let penalties = 0;
+
     Object.keys(conditions).forEach(i =>{
       if (conditions[i].checked) {
         if (conditions[i].name == 'Afraid' && (moveName == 'Intimidate' || moveName == 'Call Someone Out')) {
