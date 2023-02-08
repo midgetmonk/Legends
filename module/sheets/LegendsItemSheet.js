@@ -1,6 +1,6 @@
 export default class LegendsItemSheet extends ItemSheet {
   get template(){
-    return `systems/legends/templates/sheets/items/${this.item.type}-sheet.hbs`;
+    return `systems/RyanTestLegends/templates/sheets/items/${this.item.type}-sheet.hbs`;
   };
 
   static get defaultOptions(){

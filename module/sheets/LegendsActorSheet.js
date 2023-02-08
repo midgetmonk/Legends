@@ -15,7 +15,7 @@ export default class LegendsActorSheet extends ActorSheet {
   }
 
   get template(){
-    return `systems/legends/templates/sheets/actors/${this.actor.type}-sheet.hbs`;
+    return `systems/RyanTestLegends/templates/sheets/actors/${this.actor.type}-sheet.hbs`;
   };
 
   /**

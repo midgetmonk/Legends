@@ -140,7 +140,7 @@ Hooks.once("init", function(){
     return TextEditor.enrichHTML(html, { async: false })
   })
 
-  CONFIG.TinyMCE.content_css = "systems/legends/styles/tinymce.css";
+  CONFIG.TinyMCE.content_css = "systems/RyanTestLegends/styles/tinymce.css";
   CONFIG.TinyMCE.style_formats.push(
     {
       title: 'Legends',
@@ -218,48 +218,48 @@ Hooks.once('diceSoNiceReady', dice3d => {
   dice3d.addSystem({ id: 'legends-air', name: game.i18n.localize('legends.training.air') }, 'default');
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1','2','3','4','5','systems/legends/images/dice/air.png'],
-    bumpMaps: [,,,,,'systems/legends/images/dice/air-b.png'],
+    labels: ['1','2','3','4','5','systems/RyanTestLegends/images/dice/air.png'],
+    bumpMaps: [,,,,,'systems/RyanTestLegends/images/dice/air-b.png'],
     system: 'legends-air', colorset: 'airbending'
   });
 
   dice3d.addSystem({ id: 'legends-earth', name: game.i18n.localize('legends.training.earth') }, 'default');
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1','2','3','4','5','systems/legends/images/dice/earth.png'],
-    bumpMaps: [,,,,,'systems/legends/images/dice/earth-b.png'],
+    labels: ['1','2','3','4','5','systems/RyanTestLegends/images/dice/earth.png'],
+    bumpMaps: [,,,,,'systems/RyanTestLegends/images/dice/earth-b.png'],
     system: 'legends-earth', colorset: 'earthbending'
   });
 
   dice3d.addSystem({ id: 'legends-fire', name: game.i18n.localize('legends.training.fire') }, 'default');
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1','2','3','4','5','systems/legends/images/dice/fire.png'],
-    bumpMaps: [,,,,,'systems/legends/images/dice/fire-b.png'],
+    labels: ['1','2','3','4','5','systems/RyanTestLegends/images/dice/fire.png'],
+    bumpMaps: [,,,,,'systems/RyanTestLegends/images/dice/fire-b.png'],
     system: 'legends-fire', colorset: 'firebending'
   });
 
   dice3d.addSystem({ id: 'legends-tech', name: game.i18n.localize('legends.training.technology') }, 'default');
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1','2','3','4','5','systems/legends/images/dice/tech.png'],
-    bumpMaps: [,,,,,'systems/legends/images/dice/tech-b.png'],
+    labels: ['1','2','3','4','5','systems/RyanTestLegends/images/dice/tech.png'],
+    bumpMaps: [,,,,,'systems/RyanTestLegends/images/dice/tech-b.png'],
     system: 'legends-tech', colorset: 'technology'
   });
 
   dice3d.addSystem({ id: 'legends-water', name: game.i18n.localize('legends.training.water') }, 'default');
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1','2','3','4','5','systems/legends/images/dice/water.png'],
-    bumpMaps: [,,,,,'systems/legends/images/dice/water-b.png'],
+    labels: ['1','2','3','4','5','systems/RyanTestLegends/images/dice/water.png'],
+    bumpMaps: [,,,,,'systems/RyanTestLegends/images/dice/water-b.png'],
     system: 'legends-water', colorset: 'waterbending'
   });
 
   dice3d.addSystem({ id: 'legends-weapons', name: game.i18n.localize('legends.training.weapons') }, 'default');
   dice3d.addDicePreset({
     type: 'd6',
-    labels: ['1','2','3','4','5','systems/legends/images/dice/weapon.png'],
-    bumpMaps: [,,,,,'systems/legends/images/dice/weapon-b.png'],
+    labels: ['1','2','3','4','5','systems/RyanTestLegends/images/dice/weapon.png'],
+    bumpMaps: [,,,,,'systems/RyanTestLegends/images/dice/weapon-b.png'],
     system: 'legends-weapons', colorset: 'weapons'
   });
 });

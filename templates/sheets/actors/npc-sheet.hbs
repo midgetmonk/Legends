@@ -19,14 +19,14 @@
 
   <section class="body">
     <section class="description-drive">
-      {{> "systems/legends/templates/partials/description-editor.hbs" }}
+      {{> "systems/RyanTestLegends/templates/partials/description-editor.hbs" }}
 
-      {{> "systems/legends/templates/partials/labelled-input.hbs" field="system.drive" label="legends.actor-sheet.npc.drive" value=data.system.drive class="text"}}
+      {{> "systems/RyanTestLegends/templates/partials/labelled-input.hbs" field="system.drive" label="legends.actor-sheet.npc.drive" value=data.system.drive class="text"}}
     </section>
 
     <section class="item npc-principle principle">
       {{#if principle}}
-        {{> "systems/legends/templates/partials/npc-principle-card.hbs" principle}}
+        {{> "systems/RyanTestLegends/templates/partials/npc-principle-card.hbs" principle}}
       {{else}}
         <h1 class="title underline">
           {{localize "legends.principle.title"}}:
@@ -60,7 +60,7 @@
         </h1>
         {{#if techniques}}
           {{#each techniques as |technique|}}
-            {{> "systems/legends/templates/partials/technique-card.hbs" technique inSheet=true npc=true}}
+            {{> "systems/RyanTestLegends/templates/partials/technique-card.hbs" technique inSheet=true npc=true}}
           {{/each}}
         {{else}}
           <p>{{localize "legends.techniques.none" }}</p>
@@ -71,7 +71,7 @@
         <h1 class="title underline">{{ localize "legends.actor-sheet.conditions" }}</h1>
         {{#if conditions}}
           {{#each conditions as |condition id|}}
-            {{> "systems/legends/templates/partials/condition-card.hbs" condition inSheet=true npc=true}}
+            {{> "systems/RyanTestLegends/templates/partials/condition-card.hbs" condition inSheet=true npc=true}}
           {{/each}}
         {{else}}
           <p>{{localize "legends.condition.none" }}</p>
@@ -84,12 +84,12 @@
           {{#if (or (gt statuses.positive.length 0) (gt statuses.negative.length 0))}}
             <section class="positive">
               {{#each statuses.positive as |status id|}}
-                {{> "systems/legends/templates/partials/condition-card.hbs" status inSheet=true npc=true}}
+                {{> "systems/RyanTestLegends/templates/partials/condition-card.hbs" status inSheet=true npc=true}}
               {{/each}}
             </section>
             <section class="negative">
               {{#each statuses.negative as |status id|}}
-                {{> "systems/legends/templates/partials/condition-card.hbs" status inSheet=true npc=true}}
+                {{> "systems/RyanTestLegends/templates/partials/condition-card.hbs" status inSheet=true npc=true}}
               {{/each}}
             </section>
           {{else}}

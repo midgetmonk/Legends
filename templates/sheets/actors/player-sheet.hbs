@@ -23,7 +23,7 @@
   </section>
   {{else}}
   <section class="cell pad-sides">
-  {{> "systems/legends/templates/sheets/actors/_trainings.hbs" data}}
+  {{> "systems/RyanTestLegends/templates/sheets/actors/_trainings.hbs" data}}
   </section>
   {{/if}}
 
@@ -32,12 +32,12 @@
       <section class="cell cell-3 column">
         <section class="row">
           <section class="cell stats-fatigue pad-sides">
-            {{> "systems/legends/templates/sheets/actors/_stats.hbs" data}}
+            {{> "systems/RyanTestLegends/templates/sheets/actors/_stats.hbs" data}}
 
-            {{> "systems/legends/templates/sheets/actors/_fatigue.hbs" data}}
+            {{> "systems/RyanTestLegends/templates/sheets/actors/_fatigue.hbs" data}}
           </section>
           
-          {{> "systems/legends/templates/sheets/actors/_balance.hbs" data}}
+          {{> "systems/RyanTestLegends/templates/sheets/actors/_balance.hbs" data}}
 
         </section>
         <section class="column statuses pad-sides flex-none">
@@ -46,12 +46,12 @@
 
           <section class="cell row positive">
             {{#each statuses.positive as |status id|}}
-              {{> "systems/legends/templates/partials/status-card.hbs" status inSheet=true}}
+              {{> "systems/RyanTestLegends/templates/partials/status-card.hbs" status inSheet=true}}
             {{/each}}
           </section>
           <section class="cell row negative">
             {{#each statuses.negative as |status id|}}
-              {{> "systems/legends/templates/partials/status-card.hbs" status inSheet=true}}
+              {{> "systems/RyanTestLegends/templates/partials/status-card.hbs" status inSheet=true}}
             {{/each}}
           </section>
 
@@ -64,7 +64,7 @@
         <h1 class="title center underline">{{ localize "legends.actor-sheet.conditions" }}</h1>
         {{#if (gt conditions.length 0)}}
           {{#each conditions as |condition id|}}
-            {{> "systems/legends/templates/partials/condition-card.hbs" condition inSheet=true}}
+            {{> "systems/RyanTestLegends/templates/partials/condition-card.hbs" condition inSheet=true}}
           {{/each}}
         {{else}}
           <p>{{localize "legends.condition.none" }}</p>
@@ -100,7 +100,7 @@
           <div class="item-list col col-3">
             {{#each moves as |move id|}}
               {{#if (or (eq move.system.category ../selectedMoveCategory) (eq "all" ../selectedMoveCategory))}}
-                {{> "systems/legends/templates/partials/move-card.hbs" move inSheet=true}}
+                {{> "systems/RyanTestLegends/templates/partials/move-card.hbs" move inSheet=true}}
               {{/if}}
             {{/each}}
           </div>
@@ -114,7 +114,7 @@
       <section class="cell column">
         {{#if displayTabbed}}
         <section class="cell pad-sides">
-        {{> "systems/legends/templates/sheets/actors/_trainings.hbs" data}}
+        {{> "systems/RyanTestLegends/templates/sheets/actors/_trainings.hbs" data}}
         </section>
         {{/if}}
 
@@ -130,7 +130,7 @@
             {{#if (gt (lengthByKey ../techniquesByApproach key) 0)}}
               <div class="item-list col col-2 pad-bottom">
                 {{#each (getByKey ../techniquesByApproach key) as |technique|}}
-                  {{> "systems/legends/templates/partials/technique-card.hbs" technique inSheet=true}}
+                  {{> "systems/RyanTestLegends/templates/partials/technique-card.hbs" technique inSheet=true}}
                 {{/each}}
               </div>
             {{else}}
@@ -181,8 +181,8 @@
 
           <h1 class="title center underline">{{localize "legends.actor-sheet.player.about"}}</h1>
 
-          {{> "systems/legends/templates/partials/labelled-input.hbs" field="system.background" label="legends.actor-sheet.player.background" value=data.system.background}}
-          {{> "systems/legends/templates/partials/labelled-input.hbs" field="system.demeanor" label="legends.actor-sheet.player.demeanor" value=data.system.demeanor}}
+          {{> "systems/RyanTestLegends/templates/partials/labelled-input.hbs" field="system.background" label="legends.actor-sheet.player.background" value=data.system.background}}
+          {{> "systems/RyanTestLegends/templates/partials/labelled-input.hbs" field="system.demeanor" label="legends.actor-sheet.player.demeanor" value=data.system.demeanor}}
 
           <label class="look">
             <span class="title"><strong>{{localize "legends.actor-sheet.player.look"}}:</strong></span>
@@ -191,7 +191,7 @@
             </div>
           </label>
 
-          {{> "systems/legends/templates/partials/labelled-input.hbs" field="system.hometown" label="legends.actor-sheet.player.hometown" value=data.system.hometown}}
+          {{> "systems/RyanTestLegends/templates/partials/labelled-input.hbs" field="system.hometown" label="legends.actor-sheet.player.hometown" value=data.system.hometown}}
 
           <h2 class="title">
             {{localize "legends.growth.title"}}
@@ -206,7 +206,7 @@
           {{#if growthQuestions}}
           <ul class="item-list">
             {{#each growthQuestions as |question|}}
-            {{> "systems/legends/templates/partials/growth-question-card.hbs" question inSheet=true}}
+            {{> "systems/RyanTestLegends/templates/partials/growth-question-card.hbs" question inSheet=true}}
             {{/each}}
           </ul>
           {{else}}

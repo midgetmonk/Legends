@@ -1,11 +1,11 @@
 export default class LegendsItem extends Item {
   chatTemplate = {
-    "move": "systems/legends/templates/partials/chat/move.hbs",
-    "technique": "systems/legends/templates/partials/technique-card.hbs",
-    "feature": "systems/legends/templates/partials/feature-card.hbs",
-    "moment-of-balance": "systems/legends/templates/partials/moment-card.hbs",
-    "condition": "systems/legends/templates/partials/condition-card.hbs",
-    "status": "systems/legends/templates/partials/condition-card.hbs"
+    "move": "systems/RyanTestLegends/templates/partials/chat/move.hbs",
+    "technique": "systems/RyanTestLegends/templates/partials/technique-card.hbs",
+    "feature": "systems/RyanTestLegends/templates/partials/feature-card.hbs",
+    "moment-of-balance": "systems/RyanTestLegends/templates/partials/moment-card.hbs",
+    "condition": "systems/RyanTestLegends/templates/partials/condition-card.hbs",
+    "status": "systems/RyanTestLegends/templates/partials/condition-card.hbs"
   };
 
   /**

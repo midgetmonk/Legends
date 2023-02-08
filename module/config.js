@@ -50,17 +50,17 @@ legends.campaignFocus = {
 }
 
 legends.defaultTokens = {
-  'campaign': 'systems/legends/images/tokens/campaign.png',
-  'condition': 'systems/legends/images/tokens/condition.png',
-  'moment-of-balance': 'systems/legends/images/tokens/moment-of-balance.png',
-  'move': 'systems/legends/images/tokens/move.png',
-  'npc': 'systems/legends/images/tokens/npc.png',
-  'player': 'systems/legends/images/tokens/player.png',
-  'status': 'systems/legends/images/tokens/condition.png',
-  'technique': 'systems/legends/images/tokens/technique.png',
-  'feature': 'systems/legends/images/tokens/feature.png',
-  'npc-principle': 'systems/legends/images/tokens/npc-principle.png',
-  'growth-question': 'systems/legends/images/tokens/growth-question.png'
+  'campaign': 'systems/RyanTestLegends/images/tokens/campaign.png',
+  'condition': 'systems/RyanTestLegends/images/tokens/condition.png',
+  'moment-of-balance': 'systems/RyanTestLegends/images/tokens/moment-of-balance.png',
+  'move': 'systems/RyanTestLegends/images/tokens/move.png',
+  'npc': 'systems/RyanTestLegends/images/tokens/npc.png',
+  'player': 'systems/RyanTestLegends/images/tokens/player.png',
+  'status': 'systems/RyanTestLegends/images/tokens/condition.png',
+  'technique': 'systems/RyanTestLegends/images/tokens/technique.png',
+  'feature': 'systems/RyanTestLegends/images/tokens/feature.png',
+  'npc-principle': 'systems/RyanTestLegends/images/tokens/npc-principle.png',
+  'growth-question': 'systems/RyanTestLegends/images/tokens/growth-question.png'
 }
 
 legends.moveCategories = {

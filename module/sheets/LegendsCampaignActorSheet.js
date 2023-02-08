@@ -12,7 +12,7 @@ export default class LegendsCampaignActorSheet extends ActorSheet {
   }
 
   get template(){
-    return `systems/legends/templates/sheets/actors/${this.actor.type}-sheet.hbs`;
+    return `systems/RyanTestLegends/templates/sheets/actors/${this.actor.type}-sheet.hbs`;
   };
 
   async _onDropItemCreate(_itemData) {

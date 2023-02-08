@@ -10,6 +10,7 @@ export async function RollStat({
   statName = null,
   moveName = null,
   approach = null,
+  bonuses = null,
 } = {}){
   // Fetch the bonus/penalty values from the dialog
   let rollOptions = await GetRollOptions(statName, moveName);
@@ -49,7 +50,7 @@ export async function RollStat({
   let renderedRoll = await rollResult.render();
 
   // Setup the roll template
-  const messageTemplate = "systems/legends/templates/partials/chat/stat-roll.hbs";
+  const messageTemplate = "systems/RyanTestLegends/templates/partials/chat/stat-roll.hbs";
   let templateContext = {
     name: statName,
     move: moveName,
@@ -77,7 +78,7 @@ export async function RollStat({
  * @returns A Promise representing the Dialog to be displayed
  */
 async function GetRollOptions(statName, moveName = null){
-  const template = "systems/legends/templates/partials/dialog/roll-dialog.hbs";
+  const template = "systems/RyanTestLegends/templates/partials/dialog/roll-dialog.hbs";
   const html = await renderTemplate(template, {});
   let title = (statName !== null) ? game.i18n.format("legends.roll.stat", { stat: statName }) : game.i18n.format('legends.roll.no-stat');
 
