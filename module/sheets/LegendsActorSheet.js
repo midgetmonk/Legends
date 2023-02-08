@@ -23,7 +23,7 @@ export default class LegendsActorSheet extends ActorSheet {
    */
   itemContextMenu = [
     {
-      name: game.i18n.localize("RyanTestLegends.context-menu.edit"),
+      name: game.i18n.localize("legends.context-menu.edit"),
       icon: '<i class="fas fa-edit"></i>',
       callback: element => {
         let itemId = element.closest('.item').data('item-id');
@@ -32,7 +32,7 @@ export default class LegendsActorSheet extends ActorSheet {
       }
     },
     {
-      name: game.i18n.localize("RyanTestLegends.context-menu.delete"),
+      name: game.i18n.localize("legends.context-menu.delete"),
       icon: '<i class="fas fa-trash"></i>',
       callback: element => {
         let itemId = element.closest('.item').data('item-id');
@@ -53,7 +53,7 @@ export default class LegendsActorSheet extends ActorSheet {
     if(this.actor.type === "npc") {
       for (const item of items) {
         if(!permittedNpcItems.includes(item.type)) {
-          ui.notifications.error(game.i18n.format('RyanTestLegends.items.not-allowed'));
+          ui.notifications.error(game.i18n.format('legends.items.not-allowed'));
           return null;
         }
       }
@@ -64,7 +64,7 @@ export default class LegendsActorSheet extends ActorSheet {
   getData(){
     const context = super.getData();
     context.config = CONFIG.legends;
-    context.cssClass = game.settings.get('RyanTestLegends', 'sheetColour') || 'default';
+    context.cssClass = game.settings.get('legends', 'sheetColour') || 'default';
 
     context.feature = filter_items(context.items, 'feature')[0];
     context.conditions = filter_items(context.items, 'condition', true);
@@ -77,7 +77,7 @@ export default class LegendsActorSheet extends ActorSheet {
     context.techniques = filter_items(context.items, 'technique');
 
     if(this.actor.type == 'player'){
-      context.displayTabbed = game.settings.get('RyanTestLegends','tabbedPlayerSheet');
+      context.displayTabbed = game.settings.get('legends','tabbedPlayerSheet');
       context.growthQuestions = filter_items(context.items, 'growth-question');
 
       context.techniquesByApproach = {}
@@ -87,7 +87,7 @@ export default class LegendsActorSheet extends ActorSheet {
       })
 
       context.moveCategories = ['basic','balance', 'playbook'];
-      context.selectedMoveCategory = this.actor.getFlag('RyanTestLegends', 'moveCategory') || 'all';
+      context.selectedMoveCategory = this.actor.getFlag('legends', 'moveCategory') || 'all';
     }
     return context;
   }
