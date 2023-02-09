@@ -77,7 +77,7 @@ export async function RollStat({
  * @param {String} statName The name of the Stat being rolled
  * @returns A Promise representing the Dialog to be displayed
  */
-async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties = 0, bonusMessage = null, penaltyMessage = null){
+async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties = 0, bonusMessage = '', penaltyMessage = ''){
   const template = "systems/RyanTestLegends/templates/partials/dialog/roll-dialog.hbs";
   let tempContext = {
     bonus: bonuses,

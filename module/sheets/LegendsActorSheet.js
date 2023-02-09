@@ -217,9 +217,9 @@ export default class LegendsActorSheet extends ActorSheet {
     let conditions = filter_items(context.items, 'condition', false);
 
     let penalties = 0;
-    let penaltyMessage = null;
+    let penaltyMessage = '';
     let bonuses = 0;
-    let bonusMessage = null;
+    let bonusMessage = '';
 
     Object.keys(conditions).forEach(i =>{
       if (conditions[i].system.checked) {
