@@ -225,16 +225,16 @@ export default class LegendsActorSheet extends ActorSheet {
 
     Object.keys(conditions).forEach(i =>{
       if (conditions[i].system.checked) {
-        if ((conditions[i].name == 'Afraid' && (moveName == 'Intimidate' || moveName == 'Call Someone Out')) ||
-            (conditions[i].name == 'Insecure' && (moveName == 'Trick' || moveName == 'Resist Shifting Your Balance')) ||
-            (conditions[i].name == 'Angry' && (moveName == 'Guide and Comfort' || moveName == 'Assess a Situation')) ||
-            (conditions[i].name == 'Troubled' && (moveName == 'Plead' || moveName == 'Rely on Your Skills or Training')) ||
-            (conditions[i].name == 'Guilty' && moveName == 'Push Your Luck')
+        if ((conditions[i].name === 'Afraid' && (moveName === 'Intimidate' || moveName === 'Call Someone Out')) ||
+            (conditions[i].name === 'Insecure' && (moveName === 'Trick' || moveName === 'Resist Shifting Your Balance')) ||
+            (conditions[i].name === 'Angry' && (moveName === 'Guide and Comfort' || moveName === 'Assess a Situation')) ||
+            (conditions[i].name === 'Troubled' && (moveName === 'Plead' || moveName === 'Rely on Your Skills or Training')) ||
+            (conditions[i].name === 'Guilty' && moveName === 'Push Your Luck')
           ) {
           penalties = 2;
           penaltyMessage = '(-2 from ' + conditions[i].name + ')';
         }
-        if (conditions[i].name == 'Guilty' && moveName == 'Deny a Callout') {
+        if (conditions[i].name === 'Guilty' && moveName === 'Deny a Callout') {
           bonuses = 2;
           bonusMessage = '(+2 from ' + conditions[i].name + ')';
         }

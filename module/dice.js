@@ -87,7 +87,9 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
   }
 
   console.log('bonuses = ' + bonuses);
+  console.log('bonus message = ' + bonusMessage);
   console.log('penalties = ' + penalties);
+  console.log('penalty message = ' + penaltyMessage);
   const html = await renderTemplate(template, tempContext);
   let title = (statName !== null) ? game.i18n.format("legends.roll.stat", { stat: statName }) : game.i18n.format('legends.roll.no-stat');
 
