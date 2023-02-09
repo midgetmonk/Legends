@@ -89,8 +89,6 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
   let prin2 = '';
 
   if (moveName === 'Deny a Callout') {
-    console.log(this.actor);
-    console.log(data);
     isPrincipleRoll = true;
   }
 

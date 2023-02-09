@@ -210,6 +210,9 @@ export default class LegendsActorSheet extends ActorSheet {
     const statValue = this.actor.system.stats[statName];
     const approach = event.currentTarget.dataset.moveApproach;
 
+    console.log(this.actor);
+    console.log(data);
+
     const name = statName ? game.i18n.localize(`legends.stats.${statName}`) : null;
 
     // Get collection of condition items
