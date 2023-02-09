@@ -140,6 +140,12 @@ Hooks.once("init", function(){
     return TextEditor.enrichHTML(html, { async: false })
   })
 
+  Handlebars.registerHelper("select", function(value, options) {
+    var $el = $('<select />').html(options.fn(this));
+    $el.find('[value="' + value + '"]').attr({'selected':'selected'});
+    return $el.html
+  })
+
   CONFIG.TinyMCE.content_css = "systems/RyanTestLegends/styles/tinymce.css";
   CONFIG.TinyMCE.style_formats.push(
     {

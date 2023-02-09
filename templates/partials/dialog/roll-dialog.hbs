@@ -23,8 +23,10 @@
       Principle
     </label>
     <select name="principle" id="principle-select">
-      <option value={{actor.system.balance.value}} selected="selected">{{actor.system.balance.topTrack}}</option>
+      {{#select principle}}
+      <option value={{actor.system.balance.value}}>{{actor.system.balance.topTrack}}</option>
       <option value={{actor.system.balance.value}}>{{actor.system.balance.bottomTrack}}</option>
+      {{/select}}
     </select>
   </div>
   {{/if}}
