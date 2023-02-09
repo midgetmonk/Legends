@@ -240,7 +240,12 @@ export default class LegendsActorSheet extends ActorSheet {
           bonusMessage = '(+2 from ' + conditions[i].name + ')';
         }
       }
-    })
+    });
+
+    if (moveName === 'Deny a Callout') {
+      this._onPrincipleRoll(event, bonuses, penalties);
+      return;
+    }
 
     Dice.RollStat({
       statValue: statValue,
@@ -273,7 +278,7 @@ export default class LegendsActorSheet extends ActorSheet {
    * Roll with a Principle and send it to the Chat.
    * @param {Event} event
    */
-  _onPrincipleRoll(event){
+  _onPrincipleRoll(event, bonus = 0, penalty = 0){
     event.preventDefault();
     const name = event.currentTarget.dataset.name;
     const negative = event.currentTarget.dataset.negative;
