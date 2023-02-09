@@ -80,7 +80,7 @@ export async function RollStat({
  * @param {String} statName The name of the Stat being rolled
  * @returns A Promise representing the Dialog to be displayed
  */
-async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties = 0, bonusMessage = '', penaltyMessage = ''){
+async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties = 0, bonusMessage = '', penaltyMessage = '', actor = null){
   const template = "systems/RyanTestLegends/templates/partials/dialog/roll-dialog.hbs";
 
   // Principle addons
@@ -90,6 +90,8 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
 
   if (moveName === 'Deny a Callout') {
     isPrincipleRoll = true;
+    prin1 = actor.system.balance.topTrack;
+    prin2 = actor.system.balance.bottomTrack;
   }
 
   let tempContext = {
@@ -97,7 +99,8 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
     penaltyValue: penalties,
     bonusMessage: bonusMessage,
     penaltyMessage: penaltyMessage,
-    principleRoll: isPrincipleRoll
+    principleRoll: isPrincipleRoll,
+    actor: actor
   }
 
   const html = await renderTemplate(template, tempContext);

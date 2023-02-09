@@ -211,7 +211,6 @@ export default class LegendsActorSheet extends ActorSheet {
     const approach = event.currentTarget.dataset.moveApproach;
 
     console.log(this.actor);
-    console.log(data);
 
     const name = statName ? game.i18n.localize(`legends.stats.${statName}`) : null;
 
@@ -253,7 +252,8 @@ export default class LegendsActorSheet extends ActorSheet {
       bonuses: bonuses,
       bonusMessage: bonusMessage,
       penalties: penalties,
-      penaltyMessage: penaltyMessage
+      penaltyMessage: penaltyMessage,
+      actor: this.actor
     });
   }
 
