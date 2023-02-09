@@ -212,6 +212,8 @@ export default class LegendsActorSheet extends ActorSheet {
 
     const name = statName ? game.i18n.localize(`legends.stats.${statName}`) : null;
 
+    console.log(this.actor);
+
     // Get collection of condition items
     let context = super.getData();
     let conditions = filter_items(context.items, 'condition', false);
