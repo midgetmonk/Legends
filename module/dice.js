@@ -77,13 +77,13 @@ export async function RollStat({
  * @param {String} statName The name of the Stat being rolled
  * @returns A Promise representing the Dialog to be displayed
  */
-async function GetRollOptions(statName, moveName = null, penalties = null){
+async function GetRollOptions(statName, moveName = null, penalties = 0){
   const template = "systems/RyanTestLegends/templates/partials/dialog/roll-dialog.hbs";
   let tempContext = {
     bonus: 0,
     penalty: penalties
   }
-  const html = await renderTemplate(template, {tempContext});
+  const html = await renderTemplate(template, tempContext);
   let title = (statName !== null) ? game.i18n.format("legends.roll.stat", { stat: statName }) : game.i18n.format('legends.roll.no-stat');
 
   if(moveName !== null){
