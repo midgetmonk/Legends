@@ -82,11 +82,22 @@ export async function RollStat({
  */
 async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties = 0, bonusMessage = '', penaltyMessage = ''){
   const template = "systems/RyanTestLegends/templates/partials/dialog/roll-dialog.hbs";
+
+  // Principle addons
+  let isPrincipleRoll = false;
+  let prin1 = '';
+  let prin2 = '';
+
+  if (moveName === 'Deny a Callout') {
+    isPrincipleRoll = true;
+  }
+
   let tempContext = {
     bonusValue: bonuses,
     penaltyValue: penalties,
     bonusMessage: bonusMessage,
-    penaltyMessage: penaltyMessage
+    penaltyMessage: penaltyMessage,
+    isPrinciple: isPrincipleRoll
   }
 
   const html = await renderTemplate(template, tempContext);

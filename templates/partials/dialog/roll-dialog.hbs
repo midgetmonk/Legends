@@ -17,4 +17,15 @@
       {{localize "legends.roll.dialog.penalty-description" penaltiesAppliedMessage = penaltyMessage}}
     </small>
   </div>
+  {{#if principleRoll}}
+  <div class="form-group">
+    <label for="principle" class="title">
+      Principle
+    </label>
+    <select name="principle" id="principle-select">
+      <option value={{system.balance.value}}>{{system.balance.topTrack}}</option>
+      <option value={{system.balance.value}}>{{system.balance.bottomTrack}}</option>
+    </select>
+  </div>
+  {{/if}}
 </form>
