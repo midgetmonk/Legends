@@ -80,8 +80,8 @@ export async function RollStat({
 async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties = 0, bonusMessage = '', penaltyMessage = ''){
   const template = "systems/RyanTestLegends/templates/partials/dialog/roll-dialog.hbs";
   let tempContext = {
-    bonus: bonuses,
-    penalty: penalties,
+    bonusValue: bonuses,
+    penaltyValue: penalties,
     bonusMessage: bonusMessage,
     penaltyMessage: penaltyMessage
   }

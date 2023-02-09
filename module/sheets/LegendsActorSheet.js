@@ -227,7 +227,8 @@ export default class LegendsActorSheet extends ActorSheet {
             (conditions[i].name == 'Insecure' && (moveName == 'Trick' || moveName == 'Resist Shifting Your Balance')) ||
             (conditions[i].name == 'Angry' && (moveName == 'Guide and Comfort' || moveName == 'Assess a Situation')) ||
             (conditions[i].name == 'Troubled' && (moveName == 'Plead' || moveName == 'Rely on Your Skills or Training')) ||
-            (conditions[i].name == 'Guilty' && moveName == 'Push Your Luck')) {
+            (conditions[i].name == 'Guilty' && moveName == 'Push Your Luck')
+          ) {
           penalties = 2;
           penaltyMessage = '(-2 from ' + conditions[i].name + ')';
         }
