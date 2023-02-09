@@ -210,14 +210,16 @@ export default class LegendsActorSheet extends ActorSheet {
     const statValue = this.actor.system.stats[statName];
     const approach = event.currentTarget.dataset.moveApproach;
 
-    const name = statName ? game.i18n.localize(`RyanTestLegends.stats.${statName}`) : null;
+    const name = statName ? game.i18n.localize(`legends.stats.${statName}`) : null;
 
     // Get collection of condition items
     let context = super.getData();
     let conditions = filter_items(context.items, 'condition', false);
 
     let penalties = 0;
+    let penaltyMessage = null;
     let bonuses = 0;
+    let bonusMessage = null;
 
     Object.keys(conditions).forEach(i =>{
       if (conditions[i].system.checked) {
@@ -227,9 +229,11 @@ export default class LegendsActorSheet extends ActorSheet {
             (conditions[i].name == 'Troubled' && (moveName == 'Plead' || moveName == 'Rely on Your Skills or Training')) ||
             (conditions[i].name == 'Guilty' && moveName == 'Push Your Luck')) {
           penalties = 2;
+          penaltyMessage = '(-2 from ' + conditions[i].name + ')';
         }
         if (conditions[i].name == 'Guilty' && moveName == 'Deny a Callout') {
           bonuses = 2;
+          bonusMessage = '(+2 from ' + conditions[i].name + ')';
         }
       }
     })
@@ -240,7 +244,9 @@ export default class LegendsActorSheet extends ActorSheet {
       moveName: moveName,
       approach: approach,
       bonuses: bonuses,
-      penalties: penalties
+      bonusMessage: bonusMessage,
+      penalties: penalties,
+      penaltyMessage: penaltyMessage
     });
   }
 

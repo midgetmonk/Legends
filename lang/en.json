@@ -193,10 +193,10 @@
       "full": "Full Hit!",
       "dialog": {
         "penalty": "Penalties",
-        "penalty-description": "From Conditions and Statuses",
+        "penalty-description": "From Conditions and Statuses {penaltiesAppliedMessage}",
         "penalty-value": "{penalty}",
         "bonus": "Bonuses",
-        "bonus-description": "Total of Forwards, Ongoing and Helping",
+        "bonus-description": "Total of Forwards, Ongoing and Helping {bonusesAppliedMessage}",
         "bonus-value": "{bonus}",
         "submit": "Roll"
       },
