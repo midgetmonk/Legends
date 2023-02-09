@@ -227,14 +227,12 @@ export default class LegendsActorSheet extends ActorSheet {
       }
     })
 
-    console.log(penalties);
-
-
     Dice.RollStat({
       statValue: statValue,
       statName: name,
       moveName: moveName,
-      approach: approach
+      approach: approach,
+      penalties: penalties
     });
   }
 

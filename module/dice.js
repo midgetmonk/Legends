@@ -10,10 +10,10 @@ export async function RollStat({
   statName = null,
   moveName = null,
   approach = null,
-  bonuses = null,
+  penalties = null
 } = {}){
   // Fetch the bonus/penalty values from the dialog
-  let rollOptions = await GetRollOptions(statName, moveName);
+  let rollOptions = await GetRollOptions(statName, moveName, penalties);
 
   // Don't bother continuing if the roll was cancelled.
   if(rollOptions.cancelled){ return; }
@@ -77,9 +77,13 @@ export async function RollStat({
  * @param {String} statName The name of the Stat being rolled
  * @returns A Promise representing the Dialog to be displayed
  */
-async function GetRollOptions(statName, moveName = null){
+async function GetRollOptions(statName, moveName = null, penalties = null){
   const template = "systems/RyanTestLegends/templates/partials/dialog/roll-dialog.hbs";
-  const html = await renderTemplate(template, {});
+  let tempContext = {
+    bonus: 0,
+    penalty: penalties
+  }
+  const html = await renderTemplate(template, {tempContext});
   let title = (statName !== null) ? game.i18n.format("legends.roll.stat", { stat: statName }) : game.i18n.format('legends.roll.no-stat');
 
   if(moveName !== null){
