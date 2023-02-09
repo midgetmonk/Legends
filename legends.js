@@ -141,9 +141,17 @@ Hooks.once("init", function(){
   })
 
   Handlebars.registerHelper("selectTest", function(value, options) {
-    var $el = $('<select />').html(options.fn(this));
-    $el.find('[value="' + value + '"]').attr({'selected':'selected'});
-    return $el.html
+    var select = document.createElement('select');
+
+    select.innerHTML = options.fn(this);
+
+    select.value = value;
+
+    if (select.children[select.selectedIndex]) {
+      select.children[select.selectedIndex].setAttribute('selected','selected');
+    }
+
+    return select.innerHTML;
   })
 
   CONFIG.TinyMCE.content_css = "systems/RyanTestLegends/styles/tinymce.css";
