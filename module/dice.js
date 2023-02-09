@@ -10,10 +10,10 @@ export async function RollStat({
   statName = null,
   moveName = null,
   approach = null,
-  penalties = null,
-  bonuses = null,
-  bonusMessage = null,
-  penaltyMessage = null
+  penalties = 0,
+  bonuses = 0,
+  bonusMessage = '',
+  penaltyMessage = ''
 } = {}){
   // Fetch the bonus/penalty values from the dialog
   let rollOptions = await GetRollOptions(statName, moveName, bonuses, penalties, bonusMessage, penaltyMessage);
@@ -88,7 +88,7 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
     bonusMessage: bonusMessage,
     penaltyMessage: penaltyMessage
   }
-  
+
   const html = await renderTemplate(template, tempContext);
   let title = (statName !== null) ? game.i18n.format("legends.roll.stat", { stat: statName }) : game.i18n.format('legends.roll.no-stat');
 
