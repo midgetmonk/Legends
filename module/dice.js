@@ -86,13 +86,9 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
 
   // Principle addons
   let isPrincipleRoll = false;
-  let prin1 = '';
-  let prin2 = '';
 
   if (moveName === 'Deny a Callout') {
     isPrincipleRoll = true;
-    prin1 = actor.system.balance.topTrack;
-    prin2 = actor.system.balance.bottomTrack;
   }
 
   let tempContext = {
@@ -139,6 +135,7 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
  */
 function _processRollOptions(html){
   const form = html[0].querySelector('form');
+  console.log(form);
 
   return {
     penalty: parseInt(form.penalty.value),
