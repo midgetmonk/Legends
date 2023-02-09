@@ -194,6 +194,7 @@
       "dialog": {
         "penalty": "Penalties",
         "penalty-description": "From Conditions and Statuses",
+        "penalty-value": "{penalty}",
         "bonus": "Bonuses",
         "bonus-description": "Total of Forwards, Ongoing and Helping",
         "submit": "Roll"
