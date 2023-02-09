@@ -140,7 +140,7 @@ Hooks.once("init", function(){
     return TextEditor.enrichHTML(html, { async: false })
   })
 
-  Handlebars.registerHelper("select", function(value, options) {
+  Handlebars.registerHelper("selectTest", function(value, options) {
     var $el = $('<select />').html(options.fn(this));
     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
     return $el.html
