@@ -10,10 +10,13 @@ export async function RollStat({
   statName = null,
   moveName = null,
   approach = null,
-  penalties = null
+  penalties = null,
+  bonuses = null,
+  bonusMessage = null,
+  penaltyMessage = null
 } = {}){
   // Fetch the bonus/penalty values from the dialog
-  let rollOptions = await GetRollOptions(statName, moveName, penalties);
+  let rollOptions = await GetRollOptions(statName, moveName, bonuses, penalties, bonusMessage, penaltyMessage);
 
   // Don't bother continuing if the roll was cancelled.
   if(rollOptions.cancelled){ return; }
