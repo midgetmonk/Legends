@@ -12,9 +12,7 @@
     <label for="penalty" class="title">
       {{localize "legends.roll.dialog.penalty"}}
     </label>
-    <input name="penalty" class="hand" type="number" min="-10" max="10">
-      {{localize "legends.roll.dialog.penalty-value" penalty = penalty}}
-    </input>
+    <input name="penalty" class="hand" type="number" min="-10" max="10" value={{localize "legends.roll.dialog.penalty-value" penalty = penalty}} />
     <small class="form-text text">
       {{localize "legends.roll.dialog.penalty-description"}}
     </small>
