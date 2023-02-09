@@ -212,17 +212,24 @@ export default class LegendsActorSheet extends ActorSheet {
 
     const name = statName ? game.i18n.localize(`RyanTestLegends.stats.${statName}`) : null;
 
+    // Get collection of condition items
     let context = super.getData();
     let conditions = filter_items(context.items, 'condition', false);
 
-    console.log(conditions);
-
     let penalties = 0;
+    let bonuses = 0;
 
     Object.keys(conditions).forEach(i =>{
       if (conditions[i].system.checked) {
-        if (conditions[i].name == 'Afraid' && (moveName == 'Intimidate' || moveName == 'Call Someone Out')) {
+        if ((conditions[i].name == 'Afraid' && (moveName == 'Intimidate' || moveName == 'Call Someone Out')) ||
+            (conditions[i].name == 'Insecure' && (moveName == 'Trick' || moveName == 'Resist Shifting Your Balance')) ||
+            (conditions[i].name == 'Angry' && (moveName == 'Guide and Comfort' || moveName == 'Assess a Situation')) ||
+            (conditions[i].name == 'Troubled' && (moveName == 'Plead' || moveName == 'Rely on Your Skills or Training')) ||
+            (conditions[i].name == 'Guilty' && moveName == 'Push Your Luck')) {
           penalties = 2;
+        }
+        if (conditions[i].name == 'Guilty' && moveName == 'Deny a Callout') {
+          bonuses = 2;
         }
       }
     })
@@ -232,6 +239,7 @@ export default class LegendsActorSheet extends ActorSheet {
       statName: name,
       moveName: moveName,
       approach: approach,
+      bonuses: bonuses,
       penalties: penalties
     });
   }
