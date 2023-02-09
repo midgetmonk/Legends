@@ -97,7 +97,7 @@ async function GetRollOptions(statName, moveName = null, bonuses = 0, penalties 
     penaltyValue: penalties,
     bonusMessage: bonusMessage,
     penaltyMessage: penaltyMessage,
-    isPrinciple: isPrincipleRoll
+    principleRoll: isPrincipleRoll
   }
 
   const html = await renderTemplate(template, tempContext);
