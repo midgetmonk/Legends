@@ -149,6 +149,8 @@ Hooks.once("init", function(){
 
     if (select.children[select.selectedIndex]) {
       select.children[select.selectedIndex].setAttribute('selected','selected');
+    } else {
+      select.children[0].setAttribute('selected','selected');
     }
 
     return select.innerHTML;
