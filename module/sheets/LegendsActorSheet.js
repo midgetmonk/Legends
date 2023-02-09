@@ -212,21 +212,20 @@ export default class LegendsActorSheet extends ActorSheet {
 
     const name = statName ? game.i18n.localize(`legends.stats.${statName}`) : null;
 
-    console.log(this.actor);
-
     // Get collection of condition items
     const context = super.getData();
     const conditions = filter_items(context.items, 'condition', false);
 
+    // Variables to pass into Dice.RollStat
     let penalties = 0;
     let penaltyMessage = '';
     let bonuses = 0;
     let bonusMessage = '';
 
+    // Loop over conditions, only consider ones that are 'checked', apply standardized penalties and bonuses
+    // per Chapter 3 of the player handbook
     Object.keys(conditions).forEach(i =>{
       if (conditions[i].system.checked) {
-        console.log('Condition name = ' + conditions[i].name);
-        console.log('move name = ' + moveName);
         if ((conditions[i].name === 'Afraid' && (moveName === 'Intimidate' || moveName === 'Call Someone Out')) ||
             (conditions[i].name === 'Insecure' && (moveName === 'Trick' || moveName === 'Resist Shifting Your Balance')) ||
             (conditions[i].name === 'Angry' && (moveName === 'Guide and Comfort' || moveName === 'Assess a Situation')) ||
@@ -237,7 +236,6 @@ export default class LegendsActorSheet extends ActorSheet {
           penaltyMessage = '(-2 from ' + conditions[i].name + ')';
         }
         if (conditions[i].name === 'Guilty' && moveName === 'Deny a Callout') {
-          console.log('made it to bonus for ' + conditions[i].name + ' and move ' + moveName);
           bonuses = 2;
           bonusMessage = '(+2 from ' + conditions[i].name + ')';
         }
