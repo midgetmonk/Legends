@@ -3,7 +3,7 @@
     <label for="bonus" class="title">
       {{localize "legends.roll.dialog.bonus"}}
     </label>
-    <input name="bonus" class="hand" type="number" min="0" max="10" value="0" />
+    <input name="bonus" class="hand" type="number" min="0" max="10" value={{bonus}} />
     <small class="form-text text">
       {{localize "legends.roll.dialog.bonus-description"}}
     </small>
@@ -12,7 +12,7 @@
     <label for="penalty" class="title">
       {{localize "legends.roll.dialog.penalty"}}
     </label>
-    <input name="penalty" class="hand" type="number" min="-10" max="10" value="0" />
+    <input name="penalty" class="hand" type="number" min="-10" max="10" value={{penalty}} />
     <small class="form-text text">
       {{localize "legends.roll.dialog.penalty-description"}}
     </small>
